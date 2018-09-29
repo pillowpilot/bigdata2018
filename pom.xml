@@ -1,79 +1,86 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.politecnica.federico</groupId>
-  <artifactId>hdfswritertest1</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+	<groupId>org.politecnica.federico</groupId>
+	<artifactId>hdfswritertest1</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
-  <name>hdfswritertest1</name>
-  <url>http://maven.apache.org</url>
+	<name>hdfswritertest1</name>
+	<url>http://maven.apache.org</url>
 
-<properties>
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	<maven.compiler.source>1.6</maven.compiler.source>
-	<maven.compiler.target>1.6</maven.compiler.target>
-  </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+	</properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-    	<groupId>org.apache.hadoop</groupId>
-    	<artifactId>hadoop-client</artifactId>
-    	<version>2.9.1</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.thrift/libthrift -->
-	<dependency>
-	    <groupId>org.apache.thrift</groupId>
-	    <artifactId>libthrift</artifactId>
-	    <version>0.11.0</version>
-	    <!-- <type>pom</type> -->
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
-	<dependency>
-	    <groupId>javax.annotation</groupId>
-	    <artifactId>javax.annotation-api</artifactId>
-	    <version>1.3.2</version>
-	</dependency>
-	<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <version>2.9.6</version>
-</dependency>  
-<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
-<dependency>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-csv</artifactId>
-    <version>1.5</version>
-</dependency>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-client</artifactId>
+			<version>2.9.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.thrift/libthrift -->
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>0.11.0</version>
+			<!-- <type>pom</type> -->
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.6</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.backtype</groupId>
+			<artifactId>dfs-datastores</artifactId>
+			<version>1.3.6</version>
+		</dependency>
 
 
-</dependencies>
-  
-  <build>
-    <plugins>
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <version>1.2.1</version>
-            <configuration>
-                <mainClass>org.politecnica.federico.hdfswritertest1.Server</mainClass>
-            </configuration>
-        </plugin>
-        <plugin>
-	        <groupId>org.apache.maven.plugins</groupId>
-	        <artifactId>maven-compiler-plugin</artifactId>
-	        <version>3.7.0</version>
-	        <configuration>
-	          <source>10</source>
-	          <target>10</target>
-	        </configuration>
-      </plugin>
-    </plugins>
-</build>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<configuration>
+					<mainClass>org.politecnica.federico.hdfswritertest1.Server</mainClass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>10</source>
+					<target>10</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

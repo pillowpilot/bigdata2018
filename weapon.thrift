@@ -1,4 +1,4 @@
-namespace java org.politecnica.federico.hdfswritertest1
+namespace java org.pol.terratks
 
 /*************
  * ENTIDADES *
@@ -10,7 +10,6 @@ namespace java org.politecnica.federico.hdfswritertest1
 union Attack
 {
   1: i64 attackId;
-  2: i64 true_as_of_secs; // timestamp
 }
 
 // Propiedades
@@ -24,7 +23,8 @@ union AttackPropertyValue
 
 struct AttackProperty
 {
-  1: AttackPropertyValue property;
+  1: Attack attackId;
+  2: AttackPropertyValue property;
 }
 
 ///////////////////////////////////
@@ -43,7 +43,8 @@ union WeaponPropertyValue
 
 struct WeaponProperty
 {
-  1: WeaponPropertyValue property;
+  1: Weapon weaponId;
+  2: WeaponPropertyValue property;
 }
 
 ////////////////////////////
@@ -64,7 +65,8 @@ union LocationPropertyValue
 
 struct LocationProperty
 {
-  1: LocationPropertyValue property;
+  1: Location locationId;
+  2: LocationPropertyValue property;
 }
 
 
@@ -117,18 +119,14 @@ struct Data
 
 service AttackService
 {
-  i64 addAttack(1: i64 attackId),
   void setAttackSummary(1: i64 attackId, 2: string summary),
   void setAttackLatitude(1: i64 attackId, 2: double latitude),
   void setAttackLongitude(1: i64 attackId, 2: double longitude),
-  void setAttackNumberOfKills(1: i64 attackId, 2: i64 numberOfKills),
-  void setAttackLocation(1: i64 attackId, 2: i64 locationId),
-  void setAttackWeapon(1: i64 attackId, 2: i64 weaponId)
+  void setAttackNumberOfKills(1: i64 attackId, 2: i64 numberOfKills)
 }
 
 service LocationService
 {
-  i64 addLocation(1: i64 locationId),
   void setLocationCountry(1: i64 locationId, 2: string country),
   void setLocationRegion(1: i64 locationId, 2: string region),
   void setLocationCity(1: i64 locationId, 2: string city)
@@ -136,6 +134,15 @@ service LocationService
 
 service WeaponService
 {
-  i64 addWeapon(1: i64 weaponId),
   void setWeaponDescription(1: i64 weaponId, 2: string description)
+}
+
+service HappendsEdgeService
+{
+  void setAttackLocation(1: i64 attackId, 2: i64 locationId)
+}
+
+service UsesEdgeService
+{
+  void setAttackWeapon(1: i64 attackId, 2: i64 weaponId)
 }

@@ -12,8 +12,8 @@ package org.politecnica.federico.hdfswritertest1;
  *  ENTIDADES *
  * ***********
  */
-public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
-  private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("Attack");
+public class AttackId extends org.apache.thrift.TUnion<AttackId, AttackId._Fields> {
+  private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("AttackId");
   private static final org.apache.thrift.protocol.TField ATTACK_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("attackId", org.apache.thrift.protocol.TType.I64, (short)1);
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
@@ -80,26 +80,26 @@ public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
     tmpMap.put(_Fields.ATTACK_ID, new org.apache.thrift.meta_data.FieldMetaData("attackId", org.apache.thrift.TFieldRequirementType.OPTIONAL, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
     metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-    org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(Attack.class, metaDataMap);
+    org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(AttackId.class, metaDataMap);
   }
 
-  public Attack() {
+  public AttackId() {
     super();
   }
 
-  public Attack(_Fields setField, java.lang.Object value) {
+  public AttackId(_Fields setField, java.lang.Object value) {
     super(setField, value);
   }
 
-  public Attack(Attack other) {
+  public AttackId(AttackId other) {
     super(other);
   }
-  public Attack deepCopy() {
-    return new Attack(this);
+  public AttackId deepCopy() {
+    return new AttackId(this);
   }
 
-  public static Attack attackId(long value) {
-    Attack x = new Attack();
+  public static AttackId attackId(long value) {
+    AttackId x = new AttackId();
     x.setAttackId(value);
     return x;
   }
@@ -226,19 +226,19 @@ public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
 
 
   public boolean equals(java.lang.Object other) {
-    if (other instanceof Attack) {
-      return equals((Attack)other);
+    if (other instanceof AttackId) {
+      return equals((AttackId)other);
     } else {
       return false;
     }
   }
 
-  public boolean equals(Attack other) {
+  public boolean equals(AttackId other) {
     return other != null && getSetField() == other.getSetField() && getFieldValue().equals(other.getFieldValue());
   }
 
   @Override
-  public int compareTo(Attack other) {
+  public int compareTo(AttackId other) {
     int lastComparison = org.apache.thrift.TBaseHelper.compareTo(getSetField(), other.getSetField());
     if (lastComparison == 0) {
       return org.apache.thrift.TBaseHelper.compareTo(getFieldValue(), other.getFieldValue());

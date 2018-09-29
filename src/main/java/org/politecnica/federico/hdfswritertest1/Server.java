@@ -12,16 +12,22 @@ public class Server {
   public static AttackServiceHandler attackHandler;
   public static LocationServiceHandler locationHandler;
   public static WeaponServiceHandler weaponHandler;
-
+  public static HappendsEdgeServiceHandler happendsHandler;
+  public static UsesEdgeServiceHandler usesHandler;
+  
   public static AttackService.Processor attackProcessor;
   public static LocationService.Processor locationProcessor;
   public static WeaponService.Processor weaponProcessor;
-
+  public static HappendsEdgeService.Processor happendsProcessor;
+  public static UsesEdgeService.Processor usesProcessor;
+  
   public static void main(String [] args) {
     try {
 	  attackHandler = new AttackServiceHandler();
 	  locationHandler = new LocationServiceHandler();
 	  weaponHandler = new WeaponServiceHandler();
+	  happendsHandler = new HappendsEdgeServiceHandler();
+	  usesHandler = new UsesEdgeServiceHandler();
 	  
 	  TMultiplexedProcessor multiplexedProcessor = new TMultiplexedProcessor();
 	  
@@ -33,6 +39,12 @@ public class Server {
       
       weaponProcessor = new WeaponService.Processor(weaponHandler);
       multiplexedProcessor.registerProcessor("weapon", weaponProcessor);
+      
+      happendsProcessor = new HappendsEdgeService.Processor(happendsHandler);
+      multiplexedProcessor.registerProcessor("happendsEdge", happendsProcessor);
+      
+      usesProcessor = new UsesEdgeService.Processor(usesHandler);
+      multiplexedProcessor.registerProcessor("usesEdge", usesProcessor);
       
       TServerTransport serverTransport = new TServerSocket(9090);
       TServer server = new TSimpleServer(new Args(serverTransport).processor(multiplexedProcessor));

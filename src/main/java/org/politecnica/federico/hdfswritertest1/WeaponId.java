@@ -7,18 +7,13 @@
 package org.politecnica.federico.hdfswritertest1;
 
 @SuppressWarnings({"cast", "rawtypes", "serial", "unchecked", "unused"})
-/**
- * ***********
- *  ENTIDADES *
- * ***********
- */
-public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
-  private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("Attack");
-  private static final org.apache.thrift.protocol.TField ATTACK_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("attackId", org.apache.thrift.protocol.TType.I64, (short)1);
+public class WeaponId extends org.apache.thrift.TUnion<WeaponId, WeaponId._Fields> {
+  private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("WeaponId");
+  private static final org.apache.thrift.protocol.TField WEAPON_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("weaponId", org.apache.thrift.protocol.TType.I64, (short)1);
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-    ATTACK_ID((short)1, "attackId");
+    WEAPON_ID((short)1, "weaponId");
 
     private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -33,8 +28,8 @@ public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
      */
     public static _Fields findByThriftId(int fieldId) {
       switch(fieldId) {
-        case 1: // ATTACK_ID
-          return ATTACK_ID;
+        case 1: // WEAPON_ID
+          return WEAPON_ID;
         default:
           return null;
       }
@@ -77,30 +72,30 @@ public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
   public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
     java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-    tmpMap.put(_Fields.ATTACK_ID, new org.apache.thrift.meta_data.FieldMetaData("attackId", org.apache.thrift.TFieldRequirementType.OPTIONAL, 
+    tmpMap.put(_Fields.WEAPON_ID, new org.apache.thrift.meta_data.FieldMetaData("weaponId", org.apache.thrift.TFieldRequirementType.OPTIONAL, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
     metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
-    org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(Attack.class, metaDataMap);
+    org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(WeaponId.class, metaDataMap);
   }
 
-  public Attack() {
+  public WeaponId() {
     super();
   }
 
-  public Attack(_Fields setField, java.lang.Object value) {
+  public WeaponId(_Fields setField, java.lang.Object value) {
     super(setField, value);
   }
 
-  public Attack(Attack other) {
+  public WeaponId(WeaponId other) {
     super(other);
   }
-  public Attack deepCopy() {
-    return new Attack(this);
+  public WeaponId deepCopy() {
+    return new WeaponId(this);
   }
 
-  public static Attack attackId(long value) {
-    Attack x = new Attack();
-    x.setAttackId(value);
+  public static WeaponId weaponId(long value) {
+    WeaponId x = new WeaponId();
+    x.setWeaponId(value);
     return x;
   }
 
@@ -108,11 +103,11 @@ public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
   @Override
   protected void checkType(_Fields setField, java.lang.Object value) throws java.lang.ClassCastException {
     switch (setField) {
-      case ATTACK_ID:
+      case WEAPON_ID:
         if (value instanceof java.lang.Long) {
           break;
         }
-        throw new java.lang.ClassCastException("Was expecting value of type java.lang.Long for field 'attackId', but got " + value.getClass().getSimpleName());
+        throw new java.lang.ClassCastException("Was expecting value of type java.lang.Long for field 'weaponId', but got " + value.getClass().getSimpleName());
       default:
         throw new java.lang.IllegalArgumentException("Unknown field id " + setField);
     }
@@ -123,11 +118,11 @@ public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
     _Fields setField = _Fields.findByThriftId(field.id);
     if (setField != null) {
       switch (setField) {
-        case ATTACK_ID:
-          if (field.type == ATTACK_ID_FIELD_DESC.type) {
-            java.lang.Long attackId;
-            attackId = iprot.readI64();
-            return attackId;
+        case WEAPON_ID:
+          if (field.type == WEAPON_ID_FIELD_DESC.type) {
+            java.lang.Long weaponId;
+            weaponId = iprot.readI64();
+            return weaponId;
           } else {
             org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             return null;
@@ -144,9 +139,9 @@ public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
   @Override
   protected void standardSchemeWriteValue(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
     switch (setField_) {
-      case ATTACK_ID:
-        java.lang.Long attackId = (java.lang.Long)value_;
-        oprot.writeI64(attackId);
+      case WEAPON_ID:
+        java.lang.Long weaponId = (java.lang.Long)value_;
+        oprot.writeI64(weaponId);
         return;
       default:
         throw new java.lang.IllegalStateException("Cannot write union with unknown field " + setField_);
@@ -158,10 +153,10 @@ public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
     _Fields setField = _Fields.findByThriftId(fieldID);
     if (setField != null) {
       switch (setField) {
-        case ATTACK_ID:
-          java.lang.Long attackId;
-          attackId = iprot.readI64();
-          return attackId;
+        case WEAPON_ID:
+          java.lang.Long weaponId;
+          weaponId = iprot.readI64();
+          return weaponId;
         default:
           throw new java.lang.IllegalStateException("setField wasn't null, but didn't match any of the case statements!");
       }
@@ -173,9 +168,9 @@ public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
   @Override
   protected void tupleSchemeWriteValue(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
     switch (setField_) {
-      case ATTACK_ID:
-        java.lang.Long attackId = (java.lang.Long)value_;
-        oprot.writeI64(attackId);
+      case WEAPON_ID:
+        java.lang.Long weaponId = (java.lang.Long)value_;
+        oprot.writeI64(weaponId);
         return;
       default:
         throw new java.lang.IllegalStateException("Cannot write union with unknown field " + setField_);
@@ -185,8 +180,8 @@ public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
   @Override
   protected org.apache.thrift.protocol.TField getFieldDesc(_Fields setField) {
     switch (setField) {
-      case ATTACK_ID:
-        return ATTACK_ID_FIELD_DESC;
+      case WEAPON_ID:
+        return WEAPON_ID_FIELD_DESC;
       default:
         throw new java.lang.IllegalArgumentException("Unknown field id " + setField);
     }
@@ -207,38 +202,38 @@ public class Attack extends org.apache.thrift.TUnion<Attack, Attack._Fields> {
   }
 
 
-  public long getAttackId() {
-    if (getSetField() == _Fields.ATTACK_ID) {
+  public long getWeaponId() {
+    if (getSetField() == _Fields.WEAPON_ID) {
       return (java.lang.Long)getFieldValue();
     } else {
-      throw new java.lang.RuntimeException("Cannot get field 'attackId' because union is currently set to " + getFieldDesc(getSetField()).name);
+      throw new java.lang.RuntimeException("Cannot get field 'weaponId' because union is currently set to " + getFieldDesc(getSetField()).name);
     }
   }
 
-  public void setAttackId(long value) {
-    setField_ = _Fields.ATTACK_ID;
+  public void setWeaponId(long value) {
+    setField_ = _Fields.WEAPON_ID;
     value_ = value;
   }
 
-  public boolean isSetAttackId() {
-    return setField_ == _Fields.ATTACK_ID;
+  public boolean isSetWeaponId() {
+    return setField_ == _Fields.WEAPON_ID;
   }
 
 
   public boolean equals(java.lang.Object other) {
-    if (other instanceof Attack) {
-      return equals((Attack)other);
+    if (other instanceof WeaponId) {
+      return equals((WeaponId)other);
     } else {
       return false;
     }
   }
 
-  public boolean equals(Attack other) {
+  public boolean equals(WeaponId other) {
     return other != null && getSetField() == other.getSetField() && getFieldValue().equals(other.getFieldValue());
   }
 
   @Override
-  public int compareTo(Attack other) {
+  public int compareTo(WeaponId other) {
     int lastComparison = org.apache.thrift.TBaseHelper.compareTo(getSetField(), other.getSetField());
     if (lastComparison == 0) {
       return org.apache.thrift.TBaseHelper.compareTo(getFieldValue(), other.getFieldValue());
